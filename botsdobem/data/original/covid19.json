@@ -25,6 +25,35 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"4"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=4)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"2",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=2,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -86,6 +115,35 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"9",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=9,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"13"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=13)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -160,6 +218,49 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"7",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=7,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.54"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.54)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"20"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=20)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -250,6 +351,35 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"52"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=52)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"14",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=14,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -322,6 +452,48 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"121",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=121,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"321"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=321)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"1"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=1)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -415,6 +587,48 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"372"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=372)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"2",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=2,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"3"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=3)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -520,6 +734,60 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"249",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=249,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"3",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=3,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"621"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=621)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"6"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=6)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -637,6 +905,72 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"172",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=172,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.28"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.28)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"793"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=793)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"11"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=11)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"5",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=5,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -781,6 +1115,84 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"15"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=15)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"4",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=4,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.36"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.36)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"1021"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=1021)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.29"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.29)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"228",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=228,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":5,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -913,6 +1325,60 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"10",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=10,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"25"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=25)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"1546"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=1546)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"525",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=525,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -1049,6 +1515,86 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"378",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=378,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"1924"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=1924)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"9",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=9,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"34"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=34)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.24"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.24)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.36"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.36)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":5,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -1208,6 +1754,74 @@
                 "sentence":2
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.17"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.17)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"323",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=323,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"2247"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=2247)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"46"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=46)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"12",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=12,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1351,6 +1965,74 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"13",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=13,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"59"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=59)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"2554"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=2554)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.14"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.14)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"307",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=307,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -1501,6 +2183,84 @@
                 "sentence":1
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.14"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.14)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.19"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.19)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"432",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=432,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"15",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=15,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"3417"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=3417)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"92"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=92)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":5,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1627,6 +2387,62 @@
                 "sentence":1
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.17"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.17)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"23",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=23,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"159"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=159)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"4579"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=4579)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1752,6 +2568,62 @@
                 "sentence":2
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"42",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=42,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"1138",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=1138,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"5717"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=5717)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"201"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=201)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1846,6 +2718,34 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"7031"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=7031)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"252"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=252)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1930,6 +2830,60 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"807",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=807,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"11130"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=11130)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.08"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.08)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"486"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=486)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2054,6 +3008,72 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.08"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.08)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"293",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=293,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"3963"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=3963)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"4966",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=4966,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"57961"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=57961)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2193,6 +3213,72 @@
                 "sentence":1
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"85380"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=85380)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"7218",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=7218,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"435",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=435,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"5901"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=5901)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.08"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.08)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -2284,6 +3370,23 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"151"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=151)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -2326,6 +3429,23 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"200"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=200)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2370,6 +3490,23 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"2001"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=2001)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -2412,6 +3549,23 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"3333"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=3333)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2466,6 +3620,34 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"79685"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=79685)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"5513"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=5513)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2528,6 +3710,34 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"TOTAL_DEATHS",
+                        "attributes":{
+                            "deaths":"6006"
+                        },
+                        "str_msg":"TOTAL_DEATHS(deaths=6006)",
+                        "delex_msg":"TOTAL_DEATHS(deaths=DEATHS)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"TOTAL_CASES",
+                        "attributes":{
+                            "cases":"87187"
+                        },
+                        "str_msg":"TOTAL_CASES(cases=87187)",
+                        "delex_msg":"TOTAL_CASES(cases=CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -2589,6 +3799,35 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"20684"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=20684)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.06"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.06)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2658,6 +3897,35 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.03"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.03)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"66653"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=66653)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2739,6 +4007,49 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2840,6 +4151,49 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -2953,6 +4307,61 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.06"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.06)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -3081,6 +4490,61 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.05"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.05)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -3200,6 +4664,61 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -3332,6 +4851,75 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=True)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.06"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.06)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -3484,6 +5072,75 @@
                 "paragraph":0,
                 "sentence":1
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"True"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=True)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.05"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.05)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":2
+                    },
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -3648,6 +5305,85 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"NEW_CASES",
+                        "attributes":{
+                            "cases":"30076",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_CASES(cases=30076,highest=False)",
+                        "delex_msg":"NEW_CASES(cases=CASES,highest=HIGHEST)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"NEW_DEATHS",
+                        "attributes":{
+                            "deaths":"1466",
+                            "highest":"False"
+                        },
+                        "str_msg":"NEW_DEATHS(deaths=1466,highest=False)",
+                        "delex_msg":"NEW_DEATHS(deaths=DEATHS,highest=HIGHEST)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.06"
+                        },
+                        "str_msg":"CASES_VARIATION_LAST_DAY(trend=high,variation=0.06)",
+                        "delex_msg":"CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":0
+                    },
+                    {
+                        "intent":"DEATHS_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"high",
+                            "variation":"0.05"
+                        },
+                        "str_msg":"DEATHS_VARIATION_LAST_DAY(trend=high,variation=0.05)",
+                        "delex_msg":"DEATHS_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":3,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"ACTIVE_CASES",
+                        "attributes":{
+                            "active_cases":"283513"
+                        },
+                        "str_msg":"ACTIVE_CASES(active_cases=283513)",
+                        "delex_msg":"ACTIVE_CASES(active_cases=ACTIVE_CASES)",
+                        "order":4,
+                        "paragraph":0,
+                        "sentence":1
+                    },
+                    {
+                        "intent":"ACTIVE_CASES_VARIATION_LAST_DAY",
+                        "attributes":{
+                            "trend":"low",
+                            "variation":"-0.02"
+                        },
+                        "str_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=low,variation=-0.02)",
+                        "delex_msg":"ACTIVE_CASES_VARIATION_LAST_DAY(trend=TREND,variation=VARIATION)",
+                        "order":5,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {

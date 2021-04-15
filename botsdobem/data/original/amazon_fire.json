@@ -48,6 +48,62 @@
                 "sentence":2
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"613",
+                            "day":"5",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"613\",day=\"5\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"181",
+                            "city":"CORUMB\u00c1",
+                            "day":"5",
+                            "month":"10",
+                            "state":"MATO GROSSO DO SUL",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"181\",city=\"CORUMB\u00c1\",day=\"5\",month=\"10\",state=\"MATO GROSSO DO SUL\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"1876",
+                            "day":"5",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"1876\",day=\"5\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -201,6 +257,62 @@
                 "sentence":2
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Cerrado",
+                            "cases":"1191",
+                            "day":"6",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Cerrado\",cases=\"1191\",day=\"6\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Cerrado",
+                            "cases":"57",
+                            "city":"COCOS",
+                            "day":"6",
+                            "month":"10",
+                            "state":"BAHIA",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Cerrado\",cases=\"57\",city=\"COCOS\",day=\"6\",month=\"10\",state=\"BAHIA\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"2268",
+                            "day":"6",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"2268\",day=\"6\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -346,6 +458,62 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"1792",
+                            "day":"7",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"1792\",day=\"7\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"168",
+                            "city":"CORUMB\u00c1",
+                            "day":"7",
+                            "month":"10",
+                            "state":"MATO GROSSO DO SUL",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"168\",city=\"CORUMB\u00c1\",day=\"7\",month=\"10\",state=\"MATO GROSSO DO SUL\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"501",
+                            "day":"7",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"501\",day=\"7\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -499,6 +667,64 @@
                 "paragraph":1,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Cerrado",
+                            "cases":"1365",
+                            "day":"8",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Cerrado\",cases=\"1365\",day=\"8\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Cerrado",
+                            "cases":"82",
+                            "city":"COCOS",
+                            "day":"8",
+                            "month":"10",
+                            "state":"BAHIA",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Cerrado\",cases=\"82\",city=\"COCOS\",day=\"8\",month=\"10\",state=\"BAHIA\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ],
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"3109",
+                            "day":"8",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"3109\",day=\"8\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":1,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -660,6 +886,62 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"2446",
+                            "day":"9",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"2446\",day=\"9\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"220",
+                            "city":"CORUMB\u00c1",
+                            "day":"9",
+                            "month":"10",
+                            "state":"MATO GROSSO DO SUL",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"220\",city=\"CORUMB\u00c1\",day=\"9\",month=\"10\",state=\"MATO GROSSO DO SUL\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"1216",
+                            "day":"9",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"1216\",day=\"9\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -812,6 +1094,64 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"569",
+                            "day":"11",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"569\",day=\"11\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ],
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"260",
+                            "day":"11",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"260\",day=\"11\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":1,
+                        "paragraph":1,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"75",
+                            "city":"POCON\u00c9",
+                            "day":"11",
+                            "month":"10",
+                            "state":"MATO GROSSO",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"75\",city=\"POCON\u00c9\",day=\"11\",month=\"10\",state=\"MATO GROSSO\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":2,
+                        "paragraph":1,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -967,6 +1307,64 @@
                 "paragraph":1,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"519",
+                            "day":"12",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"519\",day=\"12\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"70",
+                            "city":"POCON\u00c9",
+                            "day":"12",
+                            "month":"10",
+                            "state":"MATO GROSSO",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"70\",city=\"POCON\u00c9\",day=\"12\",month=\"10\",state=\"MATO GROSSO\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ]
+            ],
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"871",
+                            "day":"12",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"871\",day=\"12\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":1,
+                        "sentence":0
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -1128,6 +1526,62 @@
                 "sentence":0
             }
         ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"1585",
+                            "day":"15",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"1585\",day=\"15\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"704",
+                            "day":"15",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"704\",day=\"15\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Cerrado",
+                            "cases":"35",
+                            "city":"CONCEI\u00c7\u00c3O DO TOCANTINS",
+                            "day":"15",
+                            "month":"10",
+                            "state":"TOCANTINS",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Cerrado\",cases=\"35\",city=\"CONCEI\u00c7\u00c3O DO TOCANTINS\",day=\"15\",month=\"10\",state=\"TOCANTINS\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
+        ],
         "templates":[
             {
                 "paragraph":0,
@@ -1287,6 +1741,62 @@
                 "paragraph":0,
                 "sentence":2
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Pantanal",
+                            "cases":"33",
+                            "city":"POCON\u00c9",
+                            "day":"19",
+                            "month":"10",
+                            "state":"MATO GROSSO",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Pantanal\",cases=\"33\",city=\"POCON\u00c9\",day=\"19\",month=\"10\",state=\"MATO GROSSO\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Caatinga",
+                            "cases":"301",
+                            "day":"19",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Caatinga\",cases=\"301\",day=\"19\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":1,
+                        "paragraph":0,
+                        "sentence":1
+                    }
+                ],
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"726",
+                            "day":"19",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"726\",day=\"19\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":2,
+                        "paragraph":0,
+                        "sentence":2
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
@@ -1468,6 +1978,64 @@
                 "paragraph":0,
                 "sentence":0
             }
+        ],
+        "structures":[
+            [
+                [
+                    {
+                        "intent":"DAILY_FIRES",
+                        "attributes":{
+                            "cases":"674",
+                            "day":"20",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"DAILY_FIRES(cases=\"674\",day=\"20\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"DAILY_FIRES(cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":0,
+                        "paragraph":0,
+                        "sentence":0
+                    }
+                ]
+            ],
+            [
+                [
+                    {
+                        "intent":"BIOMA_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"414",
+                            "day":"20",
+                            "month":"10",
+                            "year":"2020"
+                        },
+                        "str_msg":"BIOMA_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"414\",day=\"20\",month=\"10\",year=\"2020\")",
+                        "delex_msg":"BIOMA_FIRE_ALERT(bioma=BIOMA,cases=CASES,day=DAY,month=MONTH,year=YEAR)",
+                        "order":1,
+                        "paragraph":1,
+                        "sentence":0
+                    }
+                ],
+                [
+                    {
+                        "intent":"CITY_FIRE_ALERT",
+                        "attributes":{
+                            "bioma":"Amaz\u00f4nia",
+                            "cases":"36",
+                            "city":"\u00d3BIDOS",
+                            "day":"20",
+                            "month":"10",
+                            "state":"PAR\u00c1",
+                            "year":"2020"
+                        },
+                        "str_msg":"CITY_FIRE_ALERT(bioma=\"Amaz\u00f4nia\",cases=\"36\",city=\"\u00d3BIDOS\",day=\"20\",month=\"10\",state=\"PAR\u00c1\",year=\"2020\")",
+                        "delex_msg":"CITY_FIRE_ALERT(bioma=BIOMA,cases=CASES,city=CITY,day=DAY,month=MONTH,state=STATE,year=YEAR)",
+                        "order":2,
+                        "paragraph":1,
+                        "sentence":1
+                    }
+                ]
+            ]
         ],
         "templates":[
             {
