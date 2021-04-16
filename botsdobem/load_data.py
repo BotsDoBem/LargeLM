@@ -4,6 +4,7 @@ import json
 import os
 from random import shuffle
 from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader, Dataset
 
 DOMAINS = ['covid19', 'deforestation_daily', 'deforestation_month', 'amazon_fire', 'ibge_ipca']
 
@@ -31,7 +32,7 @@ def format_intent(message, domain):
     for attr in attributes:
         value = str(message['attributes'][attr])
         # in case of numbers, normalize them
-        if str(value.replace('.', '')).isnumeric() :
+        if str(value.replace('.', '')).isnumeric():
             value = float(value)
             # fix inconsistencies with percentages in covid and deforestation
             if attr == 'variation' and domain in ['covid19', 'deforestation_daily', 'deforestation_month']:
@@ -44,6 +45,40 @@ def format_intent(message, domain):
     intent = message['intent']
     str_msg = intent + '(' + ','.join(attr_values) + ')'
     return str_msg
+
+def format_value(value, language='pt-br'):
+    value = '{:,.2f}'.format(float(value))
+    value = value.split('.')
+    if language == 'pt-br':
+        value[0] = value[0].replace(',', '.')
+        if value[1] == '00':
+            return value[0]
+        else:
+            return ','.join(value)
+    else:
+        if value[1] == '00':
+            return value[0]
+        else:
+            return '.'.join(value)
+
+def format_text(sentence):
+    """
+    rounding numbers in the sentence
+    """
+    tokens = sentence.split()
+    for i, token in enumerate(tokens):
+        if str(token.replace('.', '')).isnumeric():
+            punctuation = False
+            if token[-1] == '.':
+                token = token[:-1]
+            value = float(token)
+            value = int(value) if value.is_integer() else round(value, 2)
+            value = str(value)
+            if punctuation:
+                value += '.'
+            
+            tokens[i] = value
+    return ' '.join(tokens)
 
 def preprocess(data, domain):
     """
@@ -61,7 +96,7 @@ def preprocess(data, domain):
                 snt_intents = ' [SEP] '.join([format_intent(intent, domain) for intent in snt])
                 prev = history[-1]
                 inp = '[INTENTS] ' + snt_intents + ' [HISTORY] ' + prev
-                snt_text = row['paragraphs'][pidx][sntidx]
+                snt_text = format_text(row['paragraphs'][pidx][sntidx])
                 history.append(snt_text)
 
                 result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
@@ -85,3 +120,17 @@ def load(setting='original'):
         testdata.extend(preprocess(domain_testdata, domain))
 
     return traindata, testdata
+
+class NewsDataset(Dataset):
+    def __init__(self, data):
+        """
+        Args:
+            data (string): data
+        """
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
