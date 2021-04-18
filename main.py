@@ -3,6 +3,7 @@ __author__='thiagocastroferreira'
 import argparse
 import botsdobem.load_data as botsdobem
 import webnlg.load_data as webnlg
+import e2e.load_data as e2e
 from models.bartgen import BARTGen
 from models.bert import BERTGen
 from models.gportuguesegen import GPorTugueseGen
@@ -81,6 +82,14 @@ if __name__ == '__main__':
         testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()
+
+        dataset = webnlg.NewsDataset(traindata)
+        trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
+
+        dataset = webnlg.NewsDataset(devdata)
+        testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
+    elif 'e2e' in data:
+        traindata, devdata, testdata = e2e.load()
 
         dataset = webnlg.NewsDataset(traindata)
         trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)

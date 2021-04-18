@@ -11,15 +11,15 @@ def preprocess(entryset):
             category = entry[key]['category']
 
             triples = []
-            for triple in sorted(entry[key]['modifiedtripleset'], key=lambda x: (x['predicate'], x['subject'], x['object'])):
-                subj, pred, obj = triple['subject'], triple['predicate'], triple['object']
+            for triple in sorted(entry[key]['modifiedtripleset'], key=lambda x: (x['property'], x['subject'], x['object'])):
+                subj, pred, obj = triple['subject'], triple['property'], triple['object']
                 str_triple = ' '.join(['<subject>', subj, '<predicate>', pred, '<object>', obj])
                 triples.append(str_triple)
-            triples = '<triple>'.join(triple)
+            triples = ' <triple> '.join(triples)
             inp = ' '.join([category, triples])
 
             for lexicalization in entry[key]['lexicalisations']:
-                text = lexicalisation['lex']
+                text = lexicalization['lex']
                 
                 result.append({ 'X': inp, 'y': text })
     return result

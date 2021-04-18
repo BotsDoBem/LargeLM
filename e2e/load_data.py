@@ -1,6 +1,8 @@
 __author__='thiagocastroferreira'
 
 import csv
+import os
+from torch.utils.data import DataLoader, Dataset
 
 def read(path):
     data = []
@@ -11,8 +13,22 @@ def read(path):
     return data
 
 def load():
-    traindata = read('trainset.csv')
-    devdata = read('devset.csv')
-    testdata = read('testset_w_refs.csv')
+    traindata = read('e2e/data/trainset.csv')
+    devdata = read('e2e/data/devset.csv')
+    testdata = read('e2e/data/testset_w_refs.csv')
 
     return traindata, devdata, testdata
+
+class NewsDataset(Dataset):
+    def __init__(self, data):
+        """
+        Args:
+            data (string): data
+        """
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
