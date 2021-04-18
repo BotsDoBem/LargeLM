@@ -6,7 +6,7 @@ import torch.nn as nn
 from transformers import T5ForConditionalGeneration, MT5ForConditionalGeneration, T5Tokenizer
 
 class T5Gen:
-    def __init__(self, path, max_length, device, multilingual):
+    def __init__(self, path, max_length, device, multilingual, sep_token='Verbalize:'):
         self.tokenizer = T5Tokenizer.from_pretrained(path)
         if multilingual:
             self.model = MT5ForConditionalGeneration.from_pretrained(path).to(device)
@@ -14,8 +14,12 @@ class T5Gen:
             self.model = T5ForConditionalGeneration.from_pretrained(path).to(device)
         self.device = device
         self.max_length = max_length
+        self.sep_token = sep_token
 
     def __call__(self, intents, texts=None):
+        # prepare
+        for i, intent in enumerate(intents):
+            intents[i] = ' '.join([self.sep_token, intent])
         # tokenize
         model_inputs = self.tokenizer(intents, truncation=True, padding=True, max_length=self.max_length, return_tensors="pt").to(self.device)
         # Predict

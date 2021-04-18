@@ -6,7 +6,6 @@ nltk.download('punkt')
 import os
 import torch
 from torch import optim
-from generator import Generator
 
 class Trainer:
     def __init__(self, model, trainloader, devloader, optimizer, epochs, \

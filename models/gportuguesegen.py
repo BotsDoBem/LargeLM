@@ -11,7 +11,7 @@ class GPorTugueseGen:
         self.tokenizer = AutoTokenizer.from_pretrained(path)
         self.model = AutoModelWithLMHead.from_pretrained(path).to(device)
         special_tokens_dict = {'bos_token': '<BOS>', 'eos_token': '<EOS>', 'pad_token': '<PAD>'}
-        num_added_toks = tokenizer.add_special_tokens(special_tokens_dict)
+        num_added_toks = self.tokenizer.add_special_tokens(special_tokens_dict)
         self.model.resize_token_embeddings(len(self.tokenizer))
         
         self.device = device
@@ -22,7 +22,7 @@ class GPorTugueseGen:
             # prepare input
             messages = []
             for i, intent in enumerate(intents):
-                msg = ' '.join([intent, self.sep_token, self.tokenizer.bos_token, texts[i], self.tokenizer.eos_token]
+                msg = ' '.join([intent, self.sep_token, self.tokenizer.bos_token, texts[i], self.tokenizer.eos_token])
                 messages.append(msg)
             # tokenize
             model_inputs = self.tokenizer(messages, truncation=True, padding=True, max_length=self.max_length, return_tensors="pt").to(self.device)
@@ -34,7 +34,7 @@ class GPorTugueseGen:
             # prepare input
             messages = []
             for i, intent in enumerate(intents):
-                msg = ' '.join([intent, self.sep_token, self.tokenizer.bos_token]
+                msg = ' '.join([intent, self.sep_token, self.tokenizer.bos_token])
                 messages.append(msg)
             # tokenize
             model_inputs = self.tokenizer(messages, truncation=True, padding=True, max_length=self.max_length, return_tensors="pt").to(self.device)

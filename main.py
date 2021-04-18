@@ -2,6 +2,7 @@ __author__='thiagocastroferreira'
 
 import argparse
 import botsdobem.load_data as botsdobem
+import webnlg.load_data as webnlg
 from models.bartgen import BARTGen
 from models.bert import BERTGen
 from models.gportuguesegen import GPorTugueseGen
@@ -24,7 +25,7 @@ if __name__ == '__main__':
     parser.add_argument("write_path", help="path to write best model")
     parser.add_argument("--verbose", help="should display the loss?", action="store_true")
     parser.add_argument("--batch_status", help="display of loss", type=int)
-    parser.add_argument("--cuda", help="use CUDA", action="store_false")
+    parser.add_argument("--cuda", help="use CUDA", action="store_true")
     parser.add_argument("--src_lang", help="source language of mBART tokenizer", default='pt_XX')
     parser.add_argument("--trg_lang", help="target language of mBART tokenizer", default='pt_XX')
     args = parser.parse_args()
@@ -35,8 +36,14 @@ if __name__ == '__main__':
     dev_batch_size = args.dev_batch_size # 2
     batch_status = args.batch_status # 5
     early_stop =args.early_stop # 5
-    verbose = args.verbose # True
-    device = args.device # 'cuda'
+    try:
+        verbose = args.verbose # True
+    except:
+        verbose = False
+    try:
+        device = 'cuda' if args.cuda else 'cpu' # 'cuda'
+    except:
+        device = 'cpu'
     write_path = args.write_path
 
     # model
@@ -54,7 +61,7 @@ if __name__ == '__main__':
         generator = T5Gen(path, max_length, device, True)
     elif 't5' in path:
         generator = T5Gen(path, max_length, device, False)
-    elif 'gportuguese' in path:
+    elif 'gpt2-small-portuguese' in path:
         generator = GPorTugueseGen(path, max_length, device)
     else:
         raise Exception("Invalid model") 
@@ -71,6 +78,14 @@ if __name__ == '__main__':
         trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
 
         dataset = botsdobem.NewsDataset(testdata)
+        testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
+    elif 'webnlg' in data:
+        traindata, devdata, testdata = webnlg.load()
+
+        dataset = webnlg.NewsDataset(traindata)
+        trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
+
+        dataset = webnlg.NewsDataset(devdata)
         testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
     else:
         raise Exception("Invalid dataset")
