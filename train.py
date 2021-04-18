@@ -9,7 +9,7 @@ from torch import optim
 
 class Trainer:
     def __init__(self, model, trainloader, devloader, optimizer, epochs, \
-        batch_status, device, write_path, early_stop=5, verbose=True):
+        batch_status, device, write_path, early_stop=5, verbose=True, language='portuguese'):
         self.model = model
         self.optimizer = optimizer
         self.epochs = epochs
@@ -20,6 +20,7 @@ class Trainer:
         self.trainloader = trainloader
         self.devloader = devloader
         self.write_path = write_path
+        self.language = language
         if not os.path.exists(write_path):
             os.mkdir(write_path)
     
@@ -86,8 +87,12 @@ class Trainer:
                 print('Pred: ', snt_pred)
                 print()
             
-            hyps.append(nltk.word_tokenize(snt_pred, language='portuguese'))
-            refs.append([nltk.word_tokenize(y_real[i], language='portuguese')])
+            if language != 'english':
+                hyps.append(nltk.word_tokenize(snt_pred, language=self.language))
+                refs.append([nltk.word_tokenize(y_real[i], language=self.language)])
+            else:
+                hyps.append(nltk.word_tokenize(snt_pred))
+                refs.append([nltk.word_tokenize(y_real[i])])
         
         bleu = corpus_bleu(refs, hyps)
         return bleu

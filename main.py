@@ -24,6 +24,7 @@ if __name__ == '__main__':
     parser.add_argument("early_stop", help="earling stop", type=int)
     parser.add_argument("max_length", help="maximum length to be processed by the network", type=int)
     parser.add_argument("write_path", help="path to write best model")
+    parser.add_argument("language", help="language")
     parser.add_argument("--verbose", help="should display the loss?", action="store_true")
     parser.add_argument("--batch_status", help="display of loss", type=int)
     parser.add_argument("--cuda", help="use CUDA", action="store_true")
@@ -37,6 +38,7 @@ if __name__ == '__main__':
     dev_batch_size = args.dev_batch_size # 2
     batch_status = args.batch_status # 5
     early_stop =args.early_stop # 5
+    language = args.language
     try:
         verbose = args.verbose # True
     except:
@@ -103,5 +105,5 @@ if __name__ == '__main__':
     optimizer = optim.AdamW(generator.model.parameters(), lr=learning_rate)
     
     # trainer
-    trainer = Trainer(generator, trainloader, testloader, optimizer, epochs, batch_status, device, write_path, early_stop, verbose)
+    trainer = Trainer(generator, trainloader, testloader, optimizer, epochs, batch_status, device, write_path, early_stop, verbose, language)
     trainer.train()
