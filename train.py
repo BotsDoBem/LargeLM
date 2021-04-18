@@ -87,7 +87,7 @@ class Trainer:
                 print('Pred: ', snt_pred)
                 print()
             
-            if language != 'english':
+            if self.language != 'english':
                 hyps.append(nltk.word_tokenize(snt_pred, language=self.language))
                 refs.append([nltk.word_tokenize(y_real[i], language=self.language)])
             else:
