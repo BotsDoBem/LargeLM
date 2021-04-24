@@ -6,14 +6,14 @@ import torch.nn as nn
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast, BartTokenizer, BartForConditionalGeneration
 
 class BARTGen:
-    def __init__(self, path, max_length, device, multilingual, src_lang='', trg_lang=''):
+    def __init__(self, tokenizer_path, model_path, max_length, device, multilingual, src_lang='', trg_lang=''):
         if multilingual:
             assert src_lang != ''
-            self.tokenizer = MBart50TokenizerFast.from_pretrained(path, src_lang=src_lang, tgt_lang=trg_lang)
-            self.model = MBartForConditionalGeneration.from_pretrained(path).to(device)
+            self.tokenizer = MBart50TokenizerFast.from_pretrained(tokenizer_path, src_lang=src_lang, tgt_lang=trg_lang)
+            self.model = MBartForConditionalGeneration.from_pretrained(model_path).to(device)
         else:
-            self.tokenizer = BartTokenizer.from_pretrained(path)
-            self.model = BartForConditionalGeneration.from_pretrained(path).to(device)
+            self.tokenizer = BartTokenizer.from_pretrained(tokenizer_path)
+            self.model = BartForConditionalGeneration.from_pretrained(model_path).to(device)
         self.device = device
         self.max_length = max_length
 

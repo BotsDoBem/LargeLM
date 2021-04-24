@@ -1,5 +1,5 @@
 mkdir logs
-python3 main.py neuralmind/bert-base-portuguese-cased \
+python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
                 'botsdobem original' \
                 30 \
                 1e-5 \
@@ -13,7 +13,7 @@ python3 main.py neuralmind/bert-base-portuguese-cased \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py facebook/mbart-large-50 \
+python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
                 'botsdobem original' \
                 30 \
                 1e-5 \
@@ -29,7 +29,7 @@ python3 main.py facebook/mbart-large-50 \
                 --src_lang pt_XX \
                 --trg_lang pt_XX 
 
-python3 main.py google/mt5-base \
+python3 main.py google/mt5-base google/mt5-base \
                 'botsdobem original' \
                 30 \
                 1e-3 \
@@ -43,7 +43,7 @@ python3 main.py google/mt5-base \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py pierreguillou/gpt2-small-portuguese \
+python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
                 'botsdobem original' \
                 30 \
                 1e-5 \
@@ -58,7 +58,7 @@ python3 main.py pierreguillou/gpt2-small-portuguese \
                 --cuda
 
 # webnlg
-python3 main.py bert-base-cased \
+python3 main.py bert-base-cased bert-base-cased \
                 'webnlg' \
                 30 \
                 1e-5 \
@@ -72,7 +72,7 @@ python3 main.py bert-base-cased \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py facebook/bart-large \
+python3 main.py facebook/bart-large facebook/bart-large \
                 'webnlg' \
                 30 \
                 1e-5 \
@@ -86,7 +86,7 @@ python3 main.py facebook/bart-large \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py t5-base \
+python3 main.py t5-base t5-base \
                 'webnlg' \
                 30 \
                 1e-4 \
@@ -100,7 +100,7 @@ python3 main.py t5-base \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py gpt2 \
+python3 main.py gpt2 gpt2 \
                 'webnlg' \
                 30 \
                 1e-5 \
@@ -115,7 +115,7 @@ python3 main.py gpt2 \
                 --cuda
 
 # e2e
-python3 main.py bert-base-cased \
+python3 main.py bert-base-cased bert-base-cased \
                 'e2e' \
                 30 \
                 1e-5 \
@@ -129,7 +129,7 @@ python3 main.py bert-base-cased \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py facebook/bart-large \
+python3 main.py facebook/bart-large facebook/bart-large \
                 'e2e' \
                 30 \
                 1e-5 \
@@ -143,7 +143,7 @@ python3 main.py facebook/bart-large \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py t5-base \
+python3 main.py t5-base t5-base \
                 'e2e' \
                 30 \
                 1e-4 \
@@ -157,7 +157,7 @@ python3 main.py t5-base \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py gpt2 \
+python3 main.py gpt2 gpt2 \
                 'e2e' \
                 30 \
                 1e-5 \

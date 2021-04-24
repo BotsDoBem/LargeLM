@@ -16,6 +16,7 @@ from torch.utils.data import DataLoader, Dataset
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
+    parser.add_argument("tokenizer", help="path to the tokenizer")
     parser.add_argument("model", help="path to the model")
     parser.add_argument("data", help="path to the data")
     parser.add_argument("epochs", help="number of epochs", type=int)
@@ -52,23 +53,24 @@ if __name__ == '__main__':
 
     # model
     max_length = args.max_length # 128
-    path = args.model # "facebook/mbart-large-50"
+    tokenizer_path = args.tokenizer # "facebook/mbart-large-50"
+    model_path = args.model # "facebook/mbart-large-50"
     if 'mbart' in path:
         src_lang = args.src_lang
         trg_lang = args.trg_lang
-        generator = BARTGen(path, max_length, device, True, src_lang, trg_lang)
+        generator = BARTGen(tokenizer_path, model_path, max_length, device, True, src_lang, trg_lang)
     elif 'bart' in path:
-        generator = BARTGen(path, max_length, device, False)
+        generator = BARTGen(tokenizer_path, model_path, max_length, device, False)
     elif 'bert' in path:
-        generator = BERTGen(path, max_length, device)
+        generator = BERTGen(tokenizer_path, model_path, max_length, device)
     elif 'mt5' in path:
-        generator = T5Gen(path, max_length, device, True)
+        generator = T5Gen(tokenizer_path, model_path, max_length, device, True)
     elif 't5' in path:
-        generator = T5Gen(path, max_length, device, False)
+        generator = T5Gen(tokenizer_path, model_path, max_length, device, False)
     elif 'gpt2-small-portuguese' in path:
-        generator = GPorTugueseGen(path, max_length, device)
+        generator = GPorTugueseGen(tokenizer_path, model_path, max_length, device)
     elif path == 'gpt2':
-        generator = GPT2(path, max_length, device)
+        generator = GPT2(tokenizer_path, model_path, max_length, device)
     else:
         raise Exception("Invalid model") 
 

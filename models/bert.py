@@ -6,9 +6,9 @@ import torch.nn as nn
 from transformers import EncoderDecoderModel, BertTokenizer
 
 class BERTGen:
-    def __init__(self, path, max_length, device):
-        self.tokenizer = BertTokenizer.from_pretrained(path)
-        self.model = EncoderDecoderModel.from_encoder_decoder_pretrained(path, path).to(device)
+    def __init__(self, tokenizer_path, model_path, max_length, device):
+        self.tokenizer = BertTokenizer.from_pretrained(tokenizer_path)
+        self.model = EncoderDecoderModel.from_encoder_decoder_pretrained(model_path, model_path).to(device)
         self.device = device
         self.max_length = max_length
 

@@ -6,10 +6,10 @@ import torch.nn as nn
 from transformers import AutoTokenizer, AutoModelWithLMHead
 
 class GPorTugueseGen:
-    def __init__(self, path, max_length, device, sep_token='<VERBALIZE>'):
+    def __init__(self, tokenizer_path, model_path, max_length, device, sep_token='<VERBALIZE>'):
         self.sep_token =sep_token
-        self.tokenizer = AutoTokenizer.from_pretrained(path)
-        self.model = AutoModelWithLMHead.from_pretrained(path).to(device)
+        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+        self.model = AutoModelWithLMHead.from_pretrained(model_path).to(device)
         special_tokens_dict = {'bos_token': '<BOS>', 'eos_token': '<EOS>', 'pad_token': '<PAD>'}
         num_added_toks = self.tokenizer.add_special_tokens(special_tokens_dict)
         self.model.resize_token_embeddings(len(self.tokenizer))

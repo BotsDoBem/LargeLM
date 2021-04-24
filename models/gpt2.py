@@ -6,10 +6,10 @@ import torch.nn as nn
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
 class GPT2:
-    def __init__(self, path, max_length, device, sep_token='<VERBALIZE>'):
+    def __init__(self, tokenizer_path, model_path, max_length, device, sep_token='<VERBALIZE>'):
         self.sep_token =sep_token
-        self.tokenizer = GPT2Tokenizer.from_pretrained(path)
-        self.model = GPT2LMHeadModel.from_pretrained(path).to(device)
+        self.tokenizer = GPT2Tokenizer.from_pretrained(tokenizer_path)
+        self.model = GPT2LMHeadModel.from_pretrained(model_path).to(device)
         special_tokens_dict = {'bos_token': '<BOS>', 'eos_token': '<EOS>', 'pad_token': '<PAD>'}
         num_added_toks = self.tokenizer.add_special_tokens(special_tokens_dict)
         self.model.resize_token_embeddings(len(self.tokenizer))
