@@ -100,6 +100,20 @@ python3 main.py t5-base \
                 --batch_status 16 \
                 --cuda
 
+python3 main.py gpt2 \
+                'webnlg' \
+                30 \
+                1e-5 \
+                4 \
+                4 \
+                5 \
+                512 \
+                logs/webnlg_gpt \
+                english \
+                --verbose \
+                --batch_status 16 \
+                --cuda
+
 # e2e
 python3 main.py bert-base-cased \
                 'e2e' \
@@ -138,6 +152,20 @@ python3 main.py t5-base \
                 5 \
                 512 \
                 logs/e2e_t5 \
+                english \
+                --verbose \
+                --batch_status 16 \
+                --cuda
+
+python3 main.py gpt2 \
+                'e2e' \
+                30 \
+                1e-5 \
+                4 \
+                4 \
+                5 \
+                512 \
+                logs/e2e_gpt \
                 english \
                 --verbose \
                 --batch_status 16 \

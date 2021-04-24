@@ -8,6 +8,7 @@ from models.bartgen import BARTGen
 from models.bert import BERTGen
 from models.gportuguesegen import GPorTugueseGen
 from models.t5gen import T5Gen
+from models.gpt2 import GPT2
 from train import Trainer
 from torch import optim
 from torch.utils.data import DataLoader, Dataset
@@ -66,6 +67,8 @@ if __name__ == '__main__':
         generator = T5Gen(path, max_length, device, False)
     elif 'gpt2-small-portuguese' in path:
         generator = GPorTugueseGen(path, max_length, device)
+    elif path == 'gpt2':
+        generator = GPT2(path, max_length, device)
     else:
         raise Exception("Invalid model") 
 

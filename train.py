@@ -51,10 +51,12 @@ class Trainer:
                         float(loss), round(sum(losses) / len(losses), 5)))
             
             bleu = self.evaluate()
+            print('BLEU: ', bleu)
             if bleu > max_bleu:
                 self.model.model.save_pretrained(os.path.join(self.write_path, 'model'))
                 max_bleu = bleu
                 repeat = 0
+                print('Saving best model...')
             else:
                 repeat += 1
             
