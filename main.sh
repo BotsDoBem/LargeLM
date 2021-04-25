@@ -1,4 +1,5 @@
 mkdir logs
+# original botsdobem
 python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
                 'botsdobem original' \
                 30 \
@@ -52,6 +53,65 @@ python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-por
                 5 \
                 300 \
                 logs/botsdobem_gportuguese \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda
+
+# synthetic botsdobem
+python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_synthetic_bertimbau \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda
+
+python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_synthetic_mbart \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda \
+                --src_lang pt_XX \
+                --trg_lang pt_XX 
+
+python3 main.py google/mt5-base google/mt5-base \
+                'botsdobem synthetic' \
+                30 \
+                1e-3 \
+                2 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_synthetic_mt5 \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda
+
+python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_synthetic_gportuguese \
                 portuguese \
                 --verbose \
                 --batch_status 16 \

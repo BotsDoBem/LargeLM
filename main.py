@@ -55,21 +55,21 @@ if __name__ == '__main__':
     max_length = args.max_length # 128
     tokenizer_path = args.tokenizer # "facebook/mbart-large-50"
     model_path = args.model # "facebook/mbart-large-50"
-    if 'mbart' in path:
+    if 'mbart' in tokenizer_path:
         src_lang = args.src_lang
         trg_lang = args.trg_lang
         generator = BARTGen(tokenizer_path, model_path, max_length, device, True, src_lang, trg_lang)
-    elif 'bart' in path:
+    elif 'bart' in tokenizer_path:
         generator = BARTGen(tokenizer_path, model_path, max_length, device, False)
-    elif 'bert' in path:
+    elif 'bert' in tokenizer_path:
         generator = BERTGen(tokenizer_path, model_path, max_length, device)
-    elif 'mt5' in path:
+    elif 'mt5' in tokenizer_path:
         generator = T5Gen(tokenizer_path, model_path, max_length, device, True)
-    elif 't5' in path:
+    elif 't5' in tokenizer_path:
         generator = T5Gen(tokenizer_path, model_path, max_length, device, False)
-    elif 'gpt2-small-portuguese' in path:
+    elif 'gpt2-small-portuguese' in tokenizer_path:
         generator = GPorTugueseGen(tokenizer_path, model_path, max_length, device)
-    elif path == 'gpt2':
+    elif tokenizer_path == 'gpt2':
         generator = GPT2(tokenizer_path, model_path, max_length, device)
     else:
         raise Exception("Invalid model") 
@@ -78,14 +78,14 @@ if __name__ == '__main__':
     data = args.data
     if 'botsdobem' in data:
         if 'original' in data:
-            traindata, testdata = botsdobem.load('original')
+            traindata, devdata = botsdobem.load('original')
         else:
-            traindata, testdata = botsdobem.load('synthetic')
+            traindata, devdata, testdata = botsdobem.load('synthetic')
             
         dataset = botsdobem.NewsDataset(traindata)
         trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
 
-        dataset = botsdobem.NewsDataset(testdata)
+        dataset = botsdobem.NewsDataset(devdata)
         testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()

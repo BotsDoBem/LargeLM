@@ -24,6 +24,13 @@ DOMAIN2PATH = {
     'ibge_ipca': 'ibge_ipca.json',
 }
 
+DOMAIN2PATH_SYNTHETIC = {
+    'covid19': 'covid19',
+    'deforestation_daily': 'amazondaily',
+    'deforestation_month': 'amazonmonth',
+    'amazon_fire': 'firedata',
+}
+
 TEST_SPLIT=0.2
 
 def format_intent(message, domain):
@@ -110,23 +117,35 @@ def load(setting='original'):
             synthetic - original + synthetic data
     """
     assert setting in ['original', 'synthetic']
-    if not os.path.exists('botsdobem/data/originaltrain.json'):
-        traindata, testdata = [], []
-        for domain in DOMAINS:
-            data = json.load(open(os.path.join('botsdobem/data', setting, DOMAIN2PATH[domain])))
-            shuffle(data)
-            size = int(len(data) * TEST_SPLIT)
-            domain_traindata, domain_testdata = data[size:], data[:size]
-            traindata.extend(preprocess(domain_traindata, domain))
-            testdata.extend(preprocess(domain_testdata, domain))
-        
-        json.dump(traindata, open('botsdobem/data/originaltrain.json', 'w'))
-        json.dump(testdata, open('botsdobem/data/originaltest.json', 'w'))
+    if setting == 'original':
+        if not os.path.exists('botsdobem/data/original/originaltrain.json'):
+            traindata, testdata = [], []
+            for domain in DOMAINS:
+                data = json.load(open(os.path.join('botsdobem/data', setting, DOMAIN2PATH[domain])))
+                shuffle(data)
+                size = int(len(data) * TEST_SPLIT)
+                domain_traindata, domain_testdata = data[size:], data[:size]
+                traindata.extend(preprocess(domain_traindata, domain))
+                testdata.extend(preprocess(domain_testdata, domain))
+            
+            json.dump(traindata, open('botsdobem/data/original/traindata.json', 'w'))
+            json.dump(testdata, open('botsdobem/data/original/devdata.json', 'w'))
+        else:
+            traindata = json.load(open('botsdobem/data/original/traindata.json'))
+            testdata = json.load(open('botsdobem/data/original/devdata.json'))
+        return traindata, testdata
     else:
-        traindata = json.load(open('botsdobem/data/originaltrain.json'))
-        testdata = json.load(open('botsdobem/data/originaltest.json'))
+        traindata, devdata, testdata = [], [], []
+        for domain in DOMAINS:
+            path = os.path.join('botsdobem/data', setting, DOMAIN2PATH_SYNTHETIC[domain])
+            domain_traindata = json.load(open(os.path.join(path, 'traindata.json')))
+            domain_devdata = json.load(open(os.path.join(path, 'devdata.json')))
+            domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
 
-    return traindata, testdata
+            traindata.extend(preprocess(domain_traindata, domain))
+            devdata.extend(preprocess(domain_devdata, domain))
+            testdata.extend(preprocess(domain_testdata, domain))
+        return traindata, devdata, testdata
 
 class NewsDataset(Dataset):
     def __init__(self, data):
