@@ -78,16 +78,19 @@ def format_text(sentence):
             punctuation = False
             if token[-1] == '.':
                 token = token[:-1]
-            value = float(token)
-            value = int(value) if value.is_integer() else round(value, 2)
-            value = str(value)
+            try:
+                value = float(token)
+                value = int(value) if value.is_integer() else round(value, 2)
+                value = str(value)
+            except:
+                value = token
             if punctuation:
                 value += '.'
             
             tokens[i] = value
     return ' '.join(tokens)
 
-def preprocess(data, domain):
+def preprocess(data, domain, setting):
     """
     Args:
         data: grammar
@@ -103,7 +106,10 @@ def preprocess(data, domain):
                 snt_intents = ' [SEP] '.join([format_intent(intent, domain) for intent in snt])
                 prev = history[-1]
                 inp = '[INTENTS] ' + snt_intents + ' [HISTORY] ' + prev
-                snt_text = format_text(row['paragraphs'][pidx][sntidx])
+                if setting == 'original':
+                    snt_text = format_text(row['paragraphs'][pidx][sntidx])
+                else:
+                    snt_text = row['paragraphs'][pidx][sntidx]
                 history.append(snt_text)
 
                 result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
@@ -137,14 +143,15 @@ def load(setting='original'):
     else:
         traindata, devdata, testdata = [], [], []
         for domain in DOMAINS:
-            path = os.path.join('botsdobem/data', setting, DOMAIN2PATH_SYNTHETIC[domain])
-            domain_traindata = json.load(open(os.path.join(path, 'traindata.json')))
-            domain_devdata = json.load(open(os.path.join(path, 'devdata.json')))
-            domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
+            if domain != 'ibge_ipca':
+                path = os.path.join('botsdobem/data', setting, DOMAIN2PATH_SYNTHETIC[domain])
+                domain_traindata = json.load(open(os.path.join(path, 'traindata.json')))
+                domain_devdata = json.load(open(os.path.join(path, 'devdata.json')))
+                domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
 
-            traindata.extend(preprocess(domain_traindata, domain))
-            devdata.extend(preprocess(domain_devdata, domain))
-            testdata.extend(preprocess(domain_testdata, domain))
+                traindata.extend(preprocess(domain_traindata, domain))
+                devdata.extend(preprocess(domain_devdata, domain))
+                testdata.extend(preprocess(domain_testdata, domain))
         return traindata, devdata, testdata
 
 class NewsDataset(Dataset):
