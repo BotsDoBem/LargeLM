@@ -124,7 +124,7 @@ def load(setting='original'):
     """
     assert setting in ['original', 'synthetic']
     if setting == 'original':
-        if not os.path.exists('botsdobem/data/original/originaltrain.json'):
+        if not os.path.exists('botsdobem/data/original/traindata.json'):
             traindata, testdata = [], []
             for domain in DOMAINS:
                 data = json.load(open(os.path.join('botsdobem/data', setting, DOMAIN2PATH[domain])))

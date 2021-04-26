@@ -18,8 +18,8 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
                 'botsdobem original' \
                 30 \
                 1e-5 \
-                2 \
-                2 \
+                1 \
+                1 \
                 5 \
                 300 \
                 logs/botsdobem_mbart \
@@ -33,9 +33,9 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
 python3 main.py google/mt5-base google/mt5-base \
                 'botsdobem original' \
                 30 \
-                1e-3 \
-                2 \
-                2 \
+                1e-4 \
+                1 \
+                1 \
                 5 \
                 300 \
                 logs/botsdobem_mt5 \
@@ -77,8 +77,8 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
                 'botsdobem synthetic' \
                 30 \
                 1e-5 \
-                2 \
-                2 \
+                1 \
+                1 \
                 5 \
                 300 \
                 logs/botsdobem_synthetic_mbart \
@@ -92,9 +92,9 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
 python3 main.py google/mt5-base google/mt5-base \
                 'botsdobem synthetic' \
                 30 \
-                1e-3 \
-                2 \
-                2 \
+                1e-4 \
+                1 \
+                1 \
                 5 \
                 300 \
                 logs/botsdobem_synthetic_mt5 \

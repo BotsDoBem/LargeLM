@@ -10,6 +10,7 @@ from models.bert import BERTGen
 from models.gportuguesegen import GPorTugueseGen
 from models.t5gen import T5Gen
 from models.gpt2 import GPT2
+from torch.utils.data import DataLoader, Dataset
 
 class Inferencer:
     def __init__(self, model, dataloader, batch_status, device, write_dir, verbose=True, language='portuguese'):
@@ -114,18 +115,18 @@ if __name__ == '__main__':
         traindata, devdata, testdata = botsdobem.load('synthetic')
             
         dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+        dataloader = DataLoader(dataset, batch_size=batch_size)
 
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()
 
         dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+        dataloader = DataLoader(dataset, batch_size=batch_size)
     elif 'e2e' in data:
         traindata, devdata, testdata = e2e.load()
 
         dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+        dataloader = DataLoader(dataset, batch_size=batch_size)
     else:
         raise Exception("Invalid dataset")
 
