@@ -83,7 +83,7 @@ if __name__ == '__main__':
         device = 'cuda' if args.cuda else 'cpu' # 'cuda'
     except:
         device = 'cpu'
-    write_path = args.write_path
+    write_dir = args.write_dir
 
     # model
     max_length = args.max_length # 128
