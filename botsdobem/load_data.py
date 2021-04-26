@@ -28,7 +28,7 @@ DOMAIN2PATH_SYNTHETIC = {
     'covid19': 'covid19',
     'deforestation_daily': 'amazondaily',
     'deforestation_month': 'amazonmonth',
-    # 'amazon_fire': 'firedata',
+    'amazon_fire': 'firedata',
 }
 
 TEST_SPLIT=0.2
