@@ -131,8 +131,8 @@ def load(setting='original'):
                 shuffle(data)
                 size = int(len(data) * TEST_SPLIT)
                 domain_traindata, domain_testdata = data[size:], data[:size]
-                traindata.extend(preprocess(domain_traindata, domain))
-                testdata.extend(preprocess(domain_testdata, domain))
+                traindata.extend(preprocess(domain_traindata, domain, setting))
+                testdata.extend(preprocess(domain_testdata, domain, setting))
             
             json.dump(traindata, open('botsdobem/data/original/traindata.json', 'w'))
             json.dump(testdata, open('botsdobem/data/original/devdata.json', 'w'))
@@ -149,9 +149,9 @@ def load(setting='original'):
                 domain_devdata = json.load(open(os.path.join(path, 'devdata.json')))
                 domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
 
-                traindata.extend(preprocess(domain_traindata, domain))
-                devdata.extend(preprocess(domain_devdata, domain))
-                testdata.extend(preprocess(domain_testdata, domain))
+                traindata.extend(preprocess(domain_traindata, domain, setting))
+                devdata.extend(preprocess(domain_devdata, domain, setting))
+                testdata.extend(preprocess(domain_testdata, domain, setting))
         return traindata, devdata, testdata
 
 class NewsDataset(Dataset):
