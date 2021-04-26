@@ -5,7 +5,6 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
                 30 \
                 1e-5 \
                 1 \
-                1 \
                 5 \
                 300 \
                 logs/botsdobem_mbart \
@@ -21,7 +20,6 @@ python3 main.py google/mt5-base google/mt5-base \
                 30 \
                 1e-4 \
                 1 \
-                1 \
                 5 \
                 300 \
                 logs/botsdobem_mt5 \
@@ -35,7 +33,6 @@ python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-por
                 30 \
                 1e-5 \
                 2 \
-                2 \
                 5 \
                 300 \
                 logs/botsdobem_gportuguese \
@@ -48,7 +45,6 @@ python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portu
                 'botsdobem original' \
                 30 \
                 1e-5 \
-                2 \
                 2 \
                 5 \
                 300 \
@@ -65,7 +61,6 @@ python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
                 30 \
                 1e-5 \
                 1 \
-                1 \
                 5 \
                 300 \
                 logs/botsdobem_synthetic_mbart \
@@ -81,7 +76,6 @@ python3 main.py google/mt5-base google/mt5-base \
                 30 \
                 1e-4 \
                 1 \
-                1 \
                 5 \
                 300 \
                 logs/botsdobem_synthetic_mt5 \
@@ -95,7 +89,6 @@ python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-por
                 30 \
                 1e-5 \
                 2 \
-                2 \
                 5 \
                 300 \
                 logs/botsdobem_synthetic_gportuguese \
@@ -108,7 +101,6 @@ python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portu
                 'botsdobem synthetic' \
                 30 \
                 1e-5 \
-                2 \
                 2 \
                 5 \
                 300 \
@@ -124,7 +116,6 @@ python3 main.py facebook/bart-large facebook/bart-large \
                 30 \
                 1e-5 \
                 4 \
-                4 \
                 5 \
                 512 \
                 logs/webnlg_bart \
@@ -137,7 +128,6 @@ python3 main.py t5-base t5-base \
                 'webnlg' \
                 30 \
                 1e-4 \
-                4 \
                 4 \
                 5 \
                 512 \
@@ -152,7 +142,6 @@ python3 main.py gpt2 gpt2 \
                 30 \
                 1e-5 \
                 4 \
-                4 \
                 5 \
                 512 \
                 logs/webnlg_gpt \
@@ -165,7 +154,6 @@ python3 main.py bert-base-cased bert-base-cased \
                 'webnlg' \
                 30 \
                 1e-5 \
-                4 \
                 4 \
                 5 \
                 512 \
@@ -181,7 +169,6 @@ python3 main.py facebook/bart-large facebook/bart-large \
                 30 \
                 1e-5 \
                 4 \
-                4 \
                 5 \
                 512 \
                 logs/e2e_bart \
@@ -194,7 +181,6 @@ python3 main.py t5-base t5-base \
                 'e2e' \
                 30 \
                 1e-4 \
-                4 \
                 4 \
                 5 \
                 512 \
@@ -209,7 +195,6 @@ python3 main.py gpt2 gpt2 \
                 30 \
                 1e-5 \
                 4 \
-                4 \
                 5 \
                 512 \
                 logs/e2e_gpt \
@@ -222,7 +207,6 @@ python3 main.py bert-base-cased bert-base-cased \
                 'e2e' \
                 30 \
                 1e-5 \
-                4 \
                 4 \
                 5 \
                 512 \

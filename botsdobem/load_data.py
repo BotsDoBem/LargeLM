@@ -28,7 +28,7 @@ DOMAIN2PATH_SYNTHETIC = {
     'covid19': 'covid19',
     'deforestation_daily': 'amazondaily',
     'deforestation_month': 'amazonmonth',
-    'amazon_fire': 'firedata',
+    # 'amazon_fire': 'firedata',
 }
 
 TEST_SPLIT=0.2
@@ -90,7 +90,7 @@ def format_text(sentence):
             tokens[i] = value
     return ' '.join(tokens)
 
-def preprocess(data, domain, setting, evaluation=False):
+def preprocess(data, domain, setting):
     """
     Args:
         data: grammar
@@ -112,10 +112,7 @@ def preprocess(data, domain, setting, evaluation=False):
                     snt_text = row['paragraphs'][pidx][sntidx]
                 history.append(snt_text)
 
-                if evaluation:
-                    result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': [snt_text] })
-                else:
-                    result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
+                result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
     return result
 
 def load(setting='original'):
@@ -134,8 +131,8 @@ def load(setting='original'):
                 shuffle(data)
                 size = int(len(data) * TEST_SPLIT)
                 domain_traindata, domain_testdata = data[size:], data[:size]
-                traindata.extend(preprocess(domain_traindata, domain, setting, True))
-                testdata.extend(preprocess(domain_testdata, domain, setting, True))
+                traindata.extend(preprocess(domain_traindata, domain, setting))
+                testdata.extend(preprocess(domain_testdata, domain, setting))
             
             json.dump(traindata, open('botsdobem/data/original/traindata.json', 'w'))
             json.dump(testdata, open('botsdobem/data/original/devdata.json', 'w'))
@@ -153,8 +150,8 @@ def load(setting='original'):
                 domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
 
                 traindata.extend(preprocess(domain_traindata, domain, setting))
-                devdata.extend(preprocess(domain_devdata, domain, setting, True))
-                testdata.extend(preprocess(domain_testdata, domain, setting, True))
+                devdata.extend(preprocess(domain_devdata, domain, setting))
+                testdata.extend(preprocess(domain_testdata, domain, setting))
         return traindata, devdata, testdata
 
 class NewsDataset(Dataset):

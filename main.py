@@ -22,7 +22,6 @@ if __name__ == '__main__':
     parser.add_argument("epochs", help="number of epochs", type=int)
     parser.add_argument("learning_rate", help="learning rate", type=float)
     parser.add_argument("train_batch_size", help="batch size of training", type=int)
-    parser.add_argument("dev_batch_size", help="batch size of test", type=int)
     parser.add_argument("early_stop", help="earling stop", type=int)
     parser.add_argument("max_length", help="maximum length to be processed by the network", type=int)
     parser.add_argument("write_path", help="path to write best model")
@@ -37,7 +36,6 @@ if __name__ == '__main__':
     learning_rate = args.learning_rate #1e-5
     epochs = args.epochs # 25
     train_batch_size = args.train_batch_size # 2
-    dev_batch_size = args.dev_batch_size # 2
     batch_status = args.batch_status # 5
     early_stop =args.early_stop # 5
     language = args.language
@@ -84,25 +82,16 @@ if __name__ == '__main__':
             
         dataset = botsdobem.NewsDataset(traindata)
         trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
-
-        dataset = botsdobem.NewsDataset(devdata)
-        testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()
 
         dataset = webnlg.NewsDataset(traindata)
         trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
-
-        dataset = webnlg.NewsDataset(devdata)
-        testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
     elif 'e2e' in data:
         traindata, devdata, testdata = e2e.load()
 
         dataset = webnlg.NewsDataset(traindata)
-        trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
-
-        dataset = webnlg.NewsDataset(devdata)
-        testloader = DataLoader(dataset, batch_size=dev_batch_size, shuffle=True)
+        trainloader = DataLoader(dataset, batch_size=train_batch_size)
     else:
         raise Exception("Invalid dataset")
 
@@ -110,5 +99,5 @@ if __name__ == '__main__':
     optimizer = optim.AdamW(generator.model.parameters(), lr=learning_rate)
     
     # trainer
-    trainer = Trainer(generator, trainloader, testloader, optimizer, epochs, batch_status, device, write_path, early_stop, verbose, language)
+    trainer = Trainer(generator, trainloader, devdata, optimizer, epochs, batch_status, device, write_path, early_stop, verbose, language)
     trainer.train()

@@ -1,14 +1,14 @@
 __author__='thiagocastroferreira'
 
 import nltk
-from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
+from nltk.translate.bleu_score import corpus_bleu
 nltk.download('punkt')
 import os
 import torch
 from torch import optim
 
 class Trainer:
-    def __init__(self, model, trainloader, devloader, optimizer, epochs, \
+    def __init__(self, model, trainloader, devdata, optimizer, epochs, \
         batch_status, device, write_path, early_stop=5, verbose=True, language='portuguese'):
         self.model = model
         self.optimizer = optimizer
@@ -18,7 +18,7 @@ class Trainer:
         self.early_stop = early_stop
         self.verbose = verbose
         self.trainloader = trainloader
-        self.devloader = devloader
+        self.devdata = devdata
         self.write_path = write_path
         self.language = language
         if not os.path.exists(write_path):
@@ -65,37 +65,35 @@ class Trainer:
     
     def evaluate(self):
         self.model.model.eval()
-        y_pred, y_real = [], []
-        for batch_idx, inp in enumerate(self.devloader):
-            intents, texts = inp['X'], inp['y']
+        results = {}
+        for batch_idx, inp in enumerate(self.devdata):
+            intent, text = inp['X'], inp['y']
+            if intent not in results:
+                results[intent] = { 'hyp': '', 'refs': [] }
+                # predict
+                output = self.model([intent])
+                results[intent]['hyp'] = output[0]
 
-            # predict
-            output = self.model(intents)
+                # Display
+                if (batch_idx+1) % self.batch_status == 0:
+                    print('Evaluation: [{}/{} ({:.0f}%)]'.format(batch_idx+1, \
+                        len(self.devdata), 100. * batch_idx / len(self.devdata)))
             
-            y_pred.extend(output)
-            y_real.extend(texts)
-
-            # Display
-            if (batch_idx+1) % self.batch_status == 0:
-                print('Evaluation: [{}/{} ({:.0f}%)]'.format(batch_idx+1, \
-                    len(self.devloader), 100. * batch_idx / len(self.devloader)))
+            results[intent]['refs'].append(text)
         
-        results = []
         hyps, refs = [], []
-        for i, snt_pred in enumerate(y_pred):
-            results.append(snt_pred)
+        for i, intent in enumerate(results.keys()):
             if i < 20 and self.verbose:
-                print('Real: ', y_real[i])
-                print('Pred: ', snt_pred)
+                print('Real: ', results[intent]['refs'][0])
+                print('Pred: ', results[intent]['hyp'])
                 print()
             
             if self.language != 'english':
-                hyps.append(nltk.word_tokenize(snt_pred, language=self.language))
-                refs.append([nltk.word_tokenize(w, language=self.language) for w in y_real[i]])
+                hyps.append(nltk.word_tokenize(results[intent]['hyp'], language=self.language))
+                refs.append([nltk.word_tokenize(ref, language=self.language) for ref in results[intent]['refs']])
             else:
-                hyps.append(nltk.word_tokenize(snt_pred))
-                refs.append([nltk.word_tokenize(w) for w in y_real[i]])
+                hyps.append(nltk.word_tokenize(results[intent]['hyp']))
+                refs.append([nltk.word_tokenize(ref) for ref in results[intent]['refs']])
         
-        chencherry = SmoothingFunction()
-        bleu = corpus_bleu(refs, hyps, smoothing_function=chencherry.method3)
+        bleu = corpus_bleu(refs, hyps)
         return bleu
