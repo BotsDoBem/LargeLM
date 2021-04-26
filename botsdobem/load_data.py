@@ -6,14 +6,14 @@ from random import shuffle
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, Dataset
 
-DOMAINS = ['covid19', 'deforestation_daily', 'deforestation_month', 'amazon_fire', 'ibge_ipca']
+DOMAINS = ['covid19', 'deforestation_daily', 'deforestation_month', 'amazon_fire']#, 'ibge_ipca']
 
 DOMAIN2TOKEN = {
     'covid19': '[COVID19]',
     'deforestation_daily': '[DEFORESTATION_DAILY]',
     'deforestation_month': '[DEFORESTATION_MONTH]',
     'amazon_fire': '[AMAZON_FIRE]',
-    'ibge_ipca': '[IBGE_IPCA]',
+    # 'ibge_ipca': '[IBGE_IPCA]',
 }
 
 DOMAIN2PATH = {
@@ -21,7 +21,7 @@ DOMAIN2PATH = {
     'deforestation_daily': 'deter_daily.json',
     'deforestation_month': 'deter_month.json',
     'amazon_fire': 'amazon_fire.json',
-    'ibge_ipca': 'ibge_ipca.json',
+    # 'ibge_ipca': 'ibge_ipca.json',
 }
 
 DOMAIN2PATH_SYNTHETIC = {
@@ -90,7 +90,7 @@ def format_text(sentence):
             tokens[i] = value
     return ' '.join(tokens)
 
-def preprocess(data, domain, setting):
+def preprocess(data, domain, setting, evaluation=False):
     """
     Args:
         data: grammar
@@ -112,7 +112,10 @@ def preprocess(data, domain, setting):
                     snt_text = row['paragraphs'][pidx][sntidx]
                 history.append(snt_text)
 
-                result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
+                if evaluation:
+                    result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': [snt_text] })
+                else:
+                    result.append({ 'X': DOMAIN2TOKEN[domain] + ' ' + inp, 'y': snt_text })
     return result
 
 def load(setting='original'):
@@ -131,8 +134,8 @@ def load(setting='original'):
                 shuffle(data)
                 size = int(len(data) * TEST_SPLIT)
                 domain_traindata, domain_testdata = data[size:], data[:size]
-                traindata.extend(preprocess(domain_traindata, domain, setting))
-                testdata.extend(preprocess(domain_testdata, domain, setting))
+                traindata.extend(preprocess(domain_traindata, domain, setting, True))
+                testdata.extend(preprocess(domain_testdata, domain, setting, True))
             
             json.dump(traindata, open('botsdobem/data/original/traindata.json', 'w'))
             json.dump(testdata, open('botsdobem/data/original/devdata.json', 'w'))
@@ -150,8 +153,8 @@ def load(setting='original'):
                 domain_testdata = json.load(open(os.path.join(path, 'testdata.json')))
 
                 traindata.extend(preprocess(domain_traindata, domain, setting))
-                devdata.extend(preprocess(domain_devdata, domain, setting))
-                testdata.extend(preprocess(domain_testdata, domain, setting))
+                devdata.extend(preprocess(domain_devdata, domain, setting, True))
+                testdata.extend(preprocess(domain_testdata, domain, setting, True))
         return traindata, devdata, testdata
 
 class NewsDataset(Dataset):

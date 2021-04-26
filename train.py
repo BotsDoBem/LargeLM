@@ -91,10 +91,10 @@ class Trainer:
             
             if self.language != 'english':
                 hyps.append(nltk.word_tokenize(snt_pred, language=self.language))
-                refs.append([nltk.word_tokenize(y_real[i], language=self.language)])
+                refs.append([nltk.word_tokenize(w, language=self.language) for w in y_real[i]])
             else:
                 hyps.append(nltk.word_tokenize(snt_pred))
-                refs.append([nltk.word_tokenize(y_real[i])])
+                refs.append([nltk.word_tokenize(w) for w in y_real[i]])
         
         chencherry = SmoothingFunction()
         bleu = corpus_bleu(refs, hyps, smoothing_function=chencherry.method3)

@@ -12,10 +12,20 @@ def read(path):
             data.append({ 'X': row[0], 'y': row[1] })
     return data
 
+def read_evaluation(path):
+    data = {}
+    with open(path) as f:
+        reader = csv.reader(f, delimiter=',', quotechar='\"')
+        for row in reader:
+            if row[0] not in data:
+                data[row[0]] = { 'X': row[0], 'y': [] }
+            data[row[0]]['y'].append(row[1])
+    return data.values()
+
 def load():
     traindata = read('e2e/data/trainset.csv')
-    devdata = read('e2e/data/devset.csv')
-    testdata = read('e2e/data/testset_w_refs.csv')
+    devdata = read_evaluation('e2e/data/devset.csv')
+    testdata = read_evaluation('e2e/data/testset_w_refs.csv')
 
     return traindata, devdata, testdata
 
