@@ -1,7 +1,7 @@
 __author__='thiagocastroferreira'
 
 import nltk
-from nltk.translate.bleu_score import corpus_bleu
+from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
 nltk.download('punkt')
 import os
 import torch
@@ -95,5 +95,6 @@ class Trainer:
                 hyps.append(nltk.word_tokenize(results[intent]['hyp']))
                 refs.append([nltk.word_tokenize(ref) for ref in results[intent]['refs']])
         
-        bleu = corpus_bleu(refs, hyps)
+        chencherry = SmoothingFunction()
+        bleu = corpus_bleu(refs, hyps, smoothing_function=chencherry.method3)
         return bleu
