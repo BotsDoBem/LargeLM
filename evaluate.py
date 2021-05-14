@@ -1,6 +1,7 @@
 __author__='thiagocastroferreira'
 
 import os
+import json
 import argparse
 import botsdobem.load_data as botsdobem
 import webnlg.load_data as webnlg
@@ -11,14 +12,16 @@ from models.gportuguesegen import GPorTugueseGen
 from models.t5gen import T5Gen
 from models.gpt2 import GPT2
 from torch.utils.data import DataLoader, Dataset
+import nltk
+from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction
 
 class Inferencer:
-    def __init__(self, model, dataloader, batch_status, device, write_dir, verbose=True, language='portuguese'):
+    def __init__(self, model, testdata, batch_status, device, write_dir, verbose=True, language='portuguese'):
         self.model = model
         self.batch_status = batch_status
         self.device = device
         self.verbose = verbose
-        self.dataloader = dataloader
+        self.testdata = testdata
         self.write_dir = write_dir
         self.language = language
         if not os.path.exists(write_dir):
@@ -27,34 +30,47 @@ class Inferencer:
     
     def evaluate(self):
         self.model.model.eval()
-        X, y_pred, y_real = [], [], []
-        for batch_idx, inp in enumerate(self.dataloader):
-            intents, texts = inp['X'], inp['y']
+        results = {}
+        for batch_idx, inp in enumerate(self.testdata):
+            intent, text = inp['X'], inp['y']
+            if intent not in results:
+                results[intent] = { 'idx': batch_idx, 'intent': intent, 'hyp': '', 'refs': [] }
+                # predict
+                output = self.model([intent])
+                results[intent]['hyp'] = output[0]
 
-            # predict
-            output = self.model(intents)
+                # Display
+                if (batch_idx+1) % self.batch_status == 0:
+                    print('Evaluation: [{}/{} ({:.0f}%)]'.format(batch_idx+1, \
+                        len(self.testdata), 100. * batch_idx / len(self.testdata)))
             
-            X.extend(intents)
-            y_pred.extend(output)
-            y_real.extend(texts)
-
-            # Display
-            if (batch_idx+1) % self.batch_status == 0:
-                print('Evaluation: [{}/{} ({:.0f}%)]'.format(batch_idx+1, \
-                    len(self.dataloader), 100. * batch_idx / len(self.dataloader)))
+            results[intent]['refs'].append(text)
         
-        for i in range(len(intents)):
-            path = os.path.join(self.write_dir, 'data.txt')
-            with open(path, 'w') as f:
-                f.write('\n'.join(X))
-            
-            path = os.path.join(self.write_dir, 'gold.txt')
-            with open(path, 'w') as f:
-                f.write('\n'.join(y_real))
-            
-            path = os.path.join(self.write_dir, 'output.txt')
-            with open(path, 'w') as f:
-                f.write('\n'.join(y_pred))
+        results = sorted(results.values(), key=lambda x: x['idx'])
+        path = os.path.join(self.write_dir, 'data.txt')
+        with open(path, 'w') as f:
+            f.write('\n'.join([w['intent'] for w in results]))
+        
+        path = os.path.join(self.write_dir, 'output.txt')
+        with open(path, 'w') as f:
+            f.write('\n'.join([w['hyp'] for w in results]))
+        
+        path = os.path.join(self.write_dir, 'result.json')
+        json.dump(results, open(path, 'w'), separators=(',', ':'), sort_keys=True, indent=4)
+
+        hyps, refs = [], []
+        for i, row in enumerate(results):
+            if self.language != 'english':
+                hyps.append(nltk.word_tokenize(row['hyp'], language=self.language))
+                refs.append([nltk.word_tokenize(ref, language=self.language) for ref in row['refs']])
+            else:
+                hyps.append(nltk.word_tokenize(row['hyp']))
+                refs.append([nltk.word_tokenize(ref) for ref in row['refs']])
+        
+        chencherry = SmoothingFunction()
+        bleu = corpus_bleu(refs, hyps, smoothing_function=chencherry.method3)
+        print('BLEU: ', bleu)
+        return bleu
         
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -113,22 +129,12 @@ if __name__ == '__main__':
     data = args.data
     if 'botsdobem' in data:
         traindata, devdata, testdata = botsdobem.load('synthetic')
-            
-        dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size)
-
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()
-
-        dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size)
     elif 'e2e' in data:
         traindata, devdata, testdata = e2e.load()
-
-        dataset = botsdobem.NewsDataset(testdata)
-        dataloader = DataLoader(dataset, batch_size=batch_size)
     else:
         raise Exception("Invalid dataset")
 
-    inf = Inferencer(generator, dataloader, batch_status, device, write_dir, verbose, language)
+    inf = Inferencer(generator, testdata, batch_status, device, write_dir, verbose, language)
     inf.evaluate()

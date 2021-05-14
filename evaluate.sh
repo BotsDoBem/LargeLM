@@ -1,6 +1,6 @@
 mkdir results
 # original botsdobem
-python3 evaluate.py neuralmind/bert-base-portuguese-cased logs_final/botsdobem_bertimbau/model \
+python3 evaluate.py neuralmind/bert-base-portuguese-cased logs/botsdobem_bertimbau/model \
                 'botsdobem original' \
                 2 \
                 300 \
@@ -10,7 +10,7 @@ python3 evaluate.py neuralmind/bert-base-portuguese-cased logs_final/botsdobem_b
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py facebook/mbart-large-50 logs_final/botsdobem_mbart/model \
+python3 evaluate.py facebook/mbart-large-50 logs/botsdobem_mbart/model \
                 'botsdobem original' \
                 2 \
                 300 \
@@ -22,7 +22,7 @@ python3 evaluate.py facebook/mbart-large-50 logs_final/botsdobem_mbart/model \
                 --src_lang pt_XX \
                 --trg_lang pt_XX 
 
-python3 evaluate.py google/mt5-base logs_final/botsdobem_mt5/model \
+python3 evaluate.py google/mt5-base logs/botsdobem_mt5/model \
                 'botsdobem original' \
                 2 \
                 300 \
@@ -32,7 +32,7 @@ python3 evaluate.py google/mt5-base logs_final/botsdobem_mt5/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py pierreguillou/gpt2-small-portuguese logs_final/botsdobem_gportuguese/model \
+python3 evaluate.py pierreguillou/gpt2-small-portuguese logs/botsdobem_gportuguese/model \
                 'botsdobem original' \
                 2 \
                 300 \
@@ -43,7 +43,7 @@ python3 evaluate.py pierreguillou/gpt2-small-portuguese logs_final/botsdobem_gpo
                 --cuda
 
 # synthetic botsdobem
-python3 evaluate.py neuralmind/bert-base-portuguese-cased logs_final/botsdobem_synthetic_bertimbau/model \
+python3 evaluate.py neuralmind/bert-base-portuguese-cased logs/botsdobem_synthetic_bertimbau/model \
                 'botsdobem synthetic' \
                 2 \
                 300 \
@@ -53,7 +53,7 @@ python3 evaluate.py neuralmind/bert-base-portuguese-cased logs_final/botsdobem_s
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py facebook/mbart-large-50 logs_final/botsdobem_synthetic_mbart/model \
+python3 evaluate.py facebook/mbart-large-50 logs/botsdobem_synthetic_mbart/model \
                 'botsdobem synthetic' \
                 2 \
                 300 \
@@ -65,7 +65,7 @@ python3 evaluate.py facebook/mbart-large-50 logs_final/botsdobem_synthetic_mbart
                 --src_lang pt_XX \
                 --trg_lang pt_XX 
 
-python3 evaluate.py google/mt5-base logs_final/botsdobem_synthetic_mt5/model \
+python3 evaluate.py google/mt5-base logs/botsdobem_synthetic_mt5/model \
                 'botsdobem synthetic' \
                 2 \
                 300 \
@@ -75,7 +75,7 @@ python3 evaluate.py google/mt5-base logs_final/botsdobem_synthetic_mt5/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py pierreguillou/gpt2-small-portuguese logs_final/botsdobem_synthetic_gportuguese/model \
+python3 evaluate.py pierreguillou/gpt2-small-portuguese logs/botsdobem_synthetic_gportuguese/model \
                 'botsdobem synthetic' \
                 2 \
                 300 \
@@ -86,7 +86,7 @@ python3 evaluate.py pierreguillou/gpt2-small-portuguese logs_final/botsdobem_syn
                 --cuda
 
 # webnlg
-python3 evaluate.py bert-base-cased logs_final/webnlg_bert/model \
+python3 evaluate.py bert-base-cased logs/webnlg_bert/model \
                 'webnlg' \
                 4 \
                 512 \
@@ -96,7 +96,7 @@ python3 evaluate.py bert-base-cased logs_final/webnlg_bert/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py facebook/bart-large logs_final/webnlg_bart/model \
+python3 evaluate.py facebook/bart-large logs/webnlg_bart/model \
                 'webnlg' \
                 4 \
                 512 \
@@ -106,7 +106,7 @@ python3 evaluate.py facebook/bart-large logs_final/webnlg_bart/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py t5-base logs_final/webnlg_t5/model \
+python3 evaluate.py t5-base logs/webnlg_t5/model \
                 'webnlg' \
                 4 \
                 512 \
@@ -116,7 +116,7 @@ python3 evaluate.py t5-base logs_final/webnlg_t5/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py gpt2 logs_final/webnlg_gpt/model \
+python3 evaluate.py gpt2 logs/webnlg_gpt/model \
                 'webnlg' \
                 4 \
                 512 \
@@ -127,7 +127,7 @@ python3 evaluate.py gpt2 logs_final/webnlg_gpt/model \
                 --cuda
 
 # e2e
-python3 evaluate.py bert-base-cased logs_final/e2e_bert/model \
+python3 evaluate.py bert-base-cased logs/e2e_bert/model \
                 'e2e' \
                 4 \
                 512 \
@@ -137,7 +137,7 @@ python3 evaluate.py bert-base-cased logs_final/e2e_bert/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py facebook/bart-large logs_final/e2e_bart/model \
+python3 evaluate.py facebook/bart-large logs/e2e_bart/model \
                 'e2e' \
                 4 \
                 512 \
@@ -147,7 +147,7 @@ python3 evaluate.py facebook/bart-large logs_final/e2e_bart/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py t5-base logs_final/e2e_t5/model \
+python3 evaluate.py t5-base logs/e2e_t5/model \
                 'e2e' \
                 4 \
                 512 \
@@ -157,7 +157,7 @@ python3 evaluate.py t5-base logs_final/e2e_t5/model \
                 --batch_status 16 \
                 --cuda
 
-python3 evaluate.py gpt2 logs_final/e2e_gpt/model \
+python3 evaluate.py gpt2 logs/e2e_gpt/model \
                 'e2e' \
                 4 \
                 512 \
