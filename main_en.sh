@@ -1,4 +1,4 @@
-mkdir logs
+mkdir logs_en
 # original botsdobem (no_desc_src - no_desc_trg)
 python3 main.py facebook/bart-large facebook/bart-large \
                 'botsdobem synthetic' \

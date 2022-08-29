@@ -1,48 +1,198 @@
 mkdir logs
-# original botsdobem
+# original botsdobem (no_desc_src - no_desc_trg)
 python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
-                'botsdobem original' \
+                'botsdobem synthetic' \
                 30 \
                 1e-5 \
                 1 \
                 5 \
                 300 \
-                logs/botsdobem_mbart \
+                logs/botsdobem_mbart_nodesc \
                 portuguese \
                 --verbose \
                 --batch_status 16 \
                 --cuda \
                 --src_lang pt_XX \
                 --trg_lang pt_XX 
+                
+# original botsdobem (desc_src - no_desc_trg)
+python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mbart_descsrc \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda \
+                --describe_number_src \
+                --src_lang pt_XX \
+                --trg_lang pt_XX 
 
+# original botsdobem (no_desc_src - desc_trg)
+python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mbart_desctrg \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda \
+                --describe_number_trg \
+                --src_lang pt_XX \
+                --trg_lang pt_XX 
+                
+# original botsdobem (desc_src - desc_trg)
+python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mbart_desc \
+                portuguese \
+                --verbose \
+                --batch_status 16 \
+                --cuda \
+                --describe_number_src \
+                --describe_number_trg \
+                --src_lang pt_XX \
+                --trg_lang pt_XX 
+
+# MT5
+# original botsdobem (no_desc_src - no_desc_trg)
 python3 main.py google/mt5-base google/mt5-base \
-                'botsdobem original' \
+                'botsdobem synthetic' \
                 30 \
                 1e-4 \
                 1 \
                 5 \
                 300 \
-                logs/botsdobem_mt5 \
+                logs/botsdobem_mt5_nodesc \
                 portuguese \
                 --verbose \
                 --batch_status 16 \
                 --cuda
+                
+# original botsdobem (desc_src - no_desc_trg)
+python3 main.py google/mt5-base google/mt5-base \
+                'botsdobem synthetic' \
+                30 \
+                1e-4 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mt5_descsrc \
+                portuguese \
+                --verbose \
+                --describe_number_src \
+                --batch_status 16 \
+                --cuda
+                
+# original botsdobem (no_desc_src - desc_trg)
+python3 main.py google/mt5-base google/mt5-base \
+                'botsdobem synthetic' \
+                30 \
+                1e-4 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mt5_desctrg \
+                portuguese \
+                --verbose \
+                --describe_number_trg \
+                --batch_status 16 \
+                --cuda
 
+# original botsdobem (desc_src - desc_trg)
+python3 main.py google/mt5-base google/mt5-base \
+                'botsdobem synthetic' \
+                30 \
+                1e-4 \
+                1 \
+                5 \
+                300 \
+                logs/botsdobem_mt5_desc \
+                portuguese \
+                --verbose \
+                --describe_number_src \
+                --describe_number_trg \
+                --batch_status 16 \
+                --cuda
+
+# GPT-2
+# original botsdobem (no_desc_src - no_desc_trg)
 python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
-                'botsdobem original' \
+                'botsdobem synthetic' \
                 30 \
                 1e-5 \
                 2 \
                 5 \
                 300 \
-                logs/botsdobem_gportuguese \
+                logs/botsdobem_gportuguese_nodesc \
                 portuguese \
                 --verbose \
                 --batch_status 16 \
                 --cuda
+                
+# original botsdobem (desc_src - no_desc_trg)
+python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_gportuguese_descsrc \
+                portuguese \
+                --verbose \
+                --describe_number_src \
+                --batch_status 16 \
+                --cuda
 
+# original botsdobem (no_desc_src - desc_trg)
+python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_gportuguese_desctrg \
+                portuguese \
+                --verbose \
+                --describe_number_trg \
+                --batch_status 16 \
+                --cuda
+
+# original botsdobem (desc_src - desc_trg)
+python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
+                'botsdobem synthetic' \
+                30 \
+                1e-5 \
+                2 \
+                5 \
+                300 \
+                logs/botsdobem_gportuguese_desc \
+                portuguese \
+                --verbose \
+                --describe_number_src \
+                --describe_number_trg \
+                --batch_status 16 \
+                --cuda
+
+# BERT
+# original botsdobem (no_desc_src - no_desc_trg)
 python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
-                'botsdobem original' \
+                'botsdobem synthetic' \
                 30 \
                 1e-5 \
                 2 \
@@ -54,49 +204,7 @@ python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portu
                 --batch_status 16 \
                 --cuda
 
-# synthetic botsdobem
-
-python3 main.py facebook/mbart-large-50 facebook/mbart-large-50 \
-                'botsdobem synthetic' \
-                30 \
-                1e-5 \
-                1 \
-                5 \
-                300 \
-                logs/botsdobem_synthetic_mbart \
-                portuguese \
-                --verbose \
-                --batch_status 16 \
-                --cuda \
-                --src_lang pt_XX \
-                --trg_lang pt_XX 
-
-python3 main.py google/mt5-base google/mt5-base \
-                'botsdobem synthetic' \
-                30 \
-                1e-4 \
-                1 \
-                5 \
-                300 \
-                logs/botsdobem_synthetic_mt5 \
-                portuguese \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py pierreguillou/gpt2-small-portuguese pierreguillou/gpt2-small-portuguese \
-                'botsdobem synthetic' \
-                30 \
-                1e-5 \
-                2 \
-                5 \
-                300 \
-                logs/botsdobem_synthetic_gportuguese \
-                portuguese \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
+# original botsdobem (desc_src - no_desc_trg)
 python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
                 'botsdobem synthetic' \
                 30 \
@@ -104,114 +212,40 @@ python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portu
                 2 \
                 5 \
                 300 \
-                logs/botsdobem_synthetic_bertimbau \
+                logs/botsdobem_bertimbau_descsrc \
                 portuguese \
                 --verbose \
+                --describe_number_src \
                 --batch_status 16 \
                 --cuda
 
-# webnlg
-python3 main.py facebook/bart-large facebook/bart-large \
-                'webnlg' \
+# original botsdobem (no_desc_src - desc_trg)
+python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
+                'botsdobem synthetic' \
                 30 \
                 1e-5 \
-                4 \
+                2 \
                 5 \
-                512 \
-                logs/webnlg_bart \
-                english \
+                300 \
+                logs/botsdobem_bertimbau_desctrg \
+                portuguese \
                 --verbose \
+                --describe_number_trg \
                 --batch_status 16 \
                 --cuda
 
-python3 main.py t5-base t5-base \
-                'webnlg' \
-                30 \
-                1e-4 \
-                4 \
-                5 \
-                512 \
-                logs/webnlg_t5 \
-                english \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py gpt2 gpt2 \
-                'webnlg' \
+# original botsdobem (desc_src - desc_trg)
+python3 main.py neuralmind/bert-base-portuguese-cased neuralmind/bert-base-portuguese-cased \
+                'botsdobem synthetic' \
                 30 \
                 1e-5 \
-                4 \
+                2 \
                 5 \
-                512 \
-                logs/webnlg_gpt \
-                english \
+                300 \
+                logs/botsdobem_bertimbau_desc \
+                portuguese \
                 --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py bert-base-cased bert-base-cased \
-                'webnlg' \
-                30 \
-                1e-5 \
-                4 \
-                5 \
-                512 \
-                logs/webnlg_bert \
-                english \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-# e2e
-python3 main.py facebook/bart-large facebook/bart-large \
-                'e2e' \
-                30 \
-                1e-5 \
-                4 \
-                5 \
-                512 \
-                logs/e2e_bart \
-                english \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py t5-base t5-base \
-                'e2e' \
-                30 \
-                1e-4 \
-                4 \
-                5 \
-                512 \
-                logs/e2e_t5 \
-                english \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py gpt2 gpt2 \
-                'e2e' \
-                30 \
-                1e-5 \
-                4 \
-                5 \
-                512 \
-                logs/e2e_gpt \
-                english \
-                --verbose \
-                --batch_status 16 \
-                --cuda
-
-python3 main.py bert-base-cased bert-base-cased \
-                'e2e' \
-                30 \
-                1e-5 \
-                4 \
-                5 \
-                512 \
-                logs/e2e_bert \
-                english \
-                --verbose \
+                --describe_number_src \
+                --describe_number_trg \
                 --batch_status 16 \
                 --cuda

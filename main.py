@@ -2,6 +2,7 @@ __author__='thiagocastroferreira'
 
 import argparse
 import botsdobem.load_data as botsdobem
+import botsdobem.load_data_en as botsdobem_en
 import webnlg.load_data as webnlg
 import e2e.load_data as e2e
 from models.bartgen import BARTGen
@@ -29,6 +30,8 @@ if __name__ == '__main__':
     parser.add_argument("--verbose", help="should display the loss?", action="store_true")
     parser.add_argument("--batch_status", help="display of loss", type=int)
     parser.add_argument("--cuda", help="use CUDA", action="store_true")
+    parser.add_argument("--describe_number_src", help="Describe numbers in the source?", action="store_true")
+    parser.add_argument("--describe_number_trg", help="Describe numbers in the target?", action="store_true")
     parser.add_argument("--src_lang", help="source language of mBART tokenizer", default='pt_XX')
     parser.add_argument("--trg_lang", help="target language of mBART tokenizer", default='pt_XX')
     args = parser.parse_args()
@@ -44,9 +47,18 @@ if __name__ == '__main__':
     except:
         verbose = False
     try:
-        device = 'cuda' if args.cuda else 'cpu' # 'cuda'
+        device = 'cuda:1' if args.cuda else 'cpu' # 'cuda'
     except:
         device = 'cpu'
+    
+    try:
+        describe_number_src = True if args.describe_number_src else False
+    except:
+        describe_number_src = False
+    try:
+        describe_number_trg = True if args.describe_number_trg else False
+    except:
+        describe_number_trg = False
     write_path = args.write_path
 
     # model
@@ -75,13 +87,18 @@ if __name__ == '__main__':
     # data
     data = args.data
     if 'botsdobem' in data:
-        if 'original' in data:
-            traindata, devdata = botsdobem.load('original')
+        if language == 'english':
+            traindata, devdata, testdata = botsdobem_en.load('synthetic', describe_number_src, describe_number_trg)
+            dataset = botsdobem_en.NewsDataset(traindata)
+            trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
         else:
-            traindata, devdata, testdata = botsdobem.load('synthetic')
-            
-        dataset = botsdobem.NewsDataset(traindata)
-        trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
+            if 'original' in data:
+                traindata, devdata = botsdobem.load('original', describe_number_src, describe_number_trg)
+            else:
+                traindata, devdata, testdata = botsdobem.load('synthetic', describe_number_src, describe_number_trg)
+
+            dataset = botsdobem.NewsDataset(traindata)
+            trainloader = DataLoader(dataset, batch_size=train_batch_size, shuffle=True)
     elif 'webnlg' in data:
         traindata, devdata, testdata = webnlg.load()
 
